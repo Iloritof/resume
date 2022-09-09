@@ -1,5 +1,4 @@
 :root {
-  --color-primary: #0dcb4d;
   --color-primary-dark: #137032;
   --color-light-grey: #eaeaea;
   --color-grey: #7e7e7e;
@@ -70,6 +69,7 @@ article {
   padding: 2rem;
   border-radius: 7px;
   box-shadow: var(--shadow-1);
+  animation: moveIn 0.7s ease-in;
 }
 
 article:not(:last-of-type) {
@@ -189,7 +189,21 @@ h3,
 .acc__details {
   padding: 1rem 0;
   border-top: var(--color-light-grey) solid 1px;
-  border-bottom: var(--color-light-grey) solid 1px;
   display: inline-block;
   width: 100%;
+}
+
+.acc__details:last-of-type {
+  border-bottom: var(--color-light-grey) solid 1px;
+}
+
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
